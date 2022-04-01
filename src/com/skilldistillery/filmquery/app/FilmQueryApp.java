@@ -15,15 +15,19 @@ public class FilmQueryApp {
 
   public static void main(String[] args) {
     FilmQueryApp app = new FilmQueryApp();
-    app.test();
-    app.testOne();
-    app.testList();
-//    app.launch();
+   app.test();
+//   app.testOne();
+//   app.testList();
+    app.launch();
   }
 
   private void test() {
     Film film = db.findFilmById(1);
     System.out.println(film);
+    for (Actor ac : film.getCast()) {
+    	System.out.println(ac);
+		
+	}
   }
 
   private void launch() {
@@ -35,7 +39,8 @@ public class FilmQueryApp {
   }
 
   private void startUserInterface(Scanner input) {
-    
+    // smaller methods 
+	  //TODO: start menu loop,input, etc. Java logic
   }
   private void testOne() {
 	    Actor actor = db.findActorById(1);
@@ -46,5 +51,5 @@ public class FilmQueryApp {
 	     actors = db.findActorsByFilmId(1);
 	    System.out.println(actors);
 	  }
-
+  // if logic for null - no object found from scanner input 
 }

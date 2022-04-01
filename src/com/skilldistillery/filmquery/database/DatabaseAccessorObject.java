@@ -41,6 +41,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				film.setReplacementCost(rs.getDouble("replacement_cost"));
 				film.setRating(rs.getString("rating"));
 				film.setSpecialFeatures(rs.getString("special_features"));
+				film.setCast(findActorsByFilmId(filmId));
 				// creates a Film object
 			}
 			rs.close();
@@ -86,7 +87,8 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		try {
 			Connection conn = DriverManager.getConnection(url, user, pass);
 			sqltext = "SELECT a.id, a.first_name, a.last_name, film.id" + " FROM film_actor f"
-	                + " JOIN actor a ON f.actor_id = a.id" + " JOIN film ON f.film_id = film.id" + " WHERE film.id = ?";
+	                + " JOIN actor a ON f.actor_id = a.id" + " JOIN film ON f.film_id = film.id" 
+					+ " WHERE film.id = ?";
 			PreparedStatement s = conn.prepareStatement(sqltext);
 			s.setInt(1, filmId);
 			ResultSet rs = s.executeQuery();
