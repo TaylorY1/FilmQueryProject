@@ -15,6 +15,21 @@ public class Film {
 	private double replacementCost;
 	private String rating;
 	private String specialFeatures;
+	private String language;
+
+	/**
+	 * @return the language
+	 */
+	public String getLanguage() {
+		return language;
+	}
+
+	/**
+	 * @param language the language to set
+	 */
+	public void setLanguage(String language) {
+		this.language = language;
+	}
 
 	private List<Actor> cast;
 
@@ -235,10 +250,8 @@ public class Film {
 
 	@Override
 	public String toString() {
-		return "Film [id=" + id + ", filmTitle=" + filmTitle + ", description=" + description + ", releaseYear="
-				+ releaseYear + ", languageId=" + languageId + ", rentalDuration=" + rentalDuration + ", rentalRate="
-				+ rentalRate + ", filmLength=" + filmLength + ", replacementCost=" + replacementCost + ", rating="
-				+ rating + ", specialFeatures=" + specialFeatures + ", cast=" + cast + "]";
+		return "Film Title:" + filmTitle + ", Description:" + description + ", Release Year:" + releaseYear
+				+ ", Rating:" + rating + ", Language:" + language + ", Film Cast:" + cast;
 	}
 
 }
