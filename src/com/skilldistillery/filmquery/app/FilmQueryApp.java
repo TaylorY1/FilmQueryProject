@@ -56,7 +56,7 @@ public class FilmQueryApp {
 			System.out.println("Please select an option");
 			input = sc.nextInt();
 			if (input < 4) {
-				FilmQueryApp filmQueryA = new FilmQueryApp();
+				// FilmQueryApp filmQueryA = new FilmQueryApp();
 
 				switch (input) {
 				case 1:
@@ -64,17 +64,25 @@ public class FilmQueryApp {
 					int filmId = sc.nextInt();
 					Film film = new Film();
 					film = db.findFilmById(filmId);
-					film.setCast(db.findActorsByFilmId(filmId));
-					film.setLanguage(db.findLanguage(filmId));
-					
-					System.out.println(film);
+					if (film != null) {
+						film.setCast(db.findActorsByFilmId(filmId));
+						film.setLanguage(db.findLanguage(filmId));
+						System.out.println(film);
+					}
+					else{
+						System.out.println("There were no results found for that ID.");
+					}
 					break;
 
 				case 2:
 					System.out.println("Enter keyword to search films:");
-					
+
 					List<Film> films = db.findFilmByKeyword(sc.next());
-					System.out.println(films);
+					if (films.size() == 0) {
+						System.out.println("That search returned no results.");
+					} else {
+						System.out.println(films);
+					}
 					// call method that searches by keyword
 					break;
 
@@ -100,17 +108,18 @@ public class FilmQueryApp {
 //		System.out.println(film);
 //	}
 
-	private void lookUpByKeyword(Scanner sc) {
-		System.out.println("Enter keyword to search films:");
-		List<Film> film = db.findFilmByKeyword(sc.next());
-		if (film = null) {
-			System.out.println("Your search returned nothing, please try again.");
-			
-		}
-		System.out.println(film);
-
-	}
-
+//	private void lookUpByKeyword(Scanner sc) {
+//		System.out.println("Enter keyword to search films:");
+//		List<Film> film = db.findFilmByKeyword(sc.next());
+//		film.setCast(db.findActorsByFilmId(filmId));
+//		film.setLanguage(db.findLanguage(filmId));
+//		if (film = null) {
+//			System.out.println("Your search returned nothing, please try again.");
+//			
+//		}
+//		System.out.println(film);
+//
+//	}
 
 //
 //	private void testOne() {
