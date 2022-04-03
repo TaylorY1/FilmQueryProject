@@ -68,8 +68,7 @@ public class FilmQueryApp {
 						film.setCast(db.findActorsByFilmId(filmId));
 						film.setLanguage(db.findLanguage(filmId));
 						System.out.println(film);
-					}
-					else{
+					} else {
 						System.out.println("There were no results found for that ID.");
 					}
 					break;
@@ -133,4 +132,4 @@ public class FilmQueryApp {
 //		actors = db.findActorsByFilmId(1);
 //		System.out.println(actors);
 //	}
-	// if logic for null - no object found from scanner input
+// if logic for null - no object found from scanner input
