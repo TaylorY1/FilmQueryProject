@@ -6,7 +6,7 @@ This project allows users to search through a database that mimics a video store
 
 When you open and then run this project, you are immediately greeted with a menu as seen below:
 
----------------------------------------------
+"---------------------------------------------
 --------------------MENU---------------------
 ---------------------------------------------
 Please pick from the following menu options:
@@ -14,7 +14,7 @@ Please pick from the following menu options:
 2. Look up film by search keyword
 3. Exit the Application
 ---------------------------------------------
-Please select an option:
+Please select an option:"
 
 
 This will ask you select between three different options. If you select "Look up film by ID", you will then be prompted to enter any ID:
@@ -46,4 +46,4 @@ The Technologies used in this project were substantial. For this project I used 
 
 ### What was fun?
 
-There were many fun things about this project. I was able to pull information from a database and allow a user to see that information using the command line. This was a very cool thing to be able to do within Java. This project really helped me see how Java can be fully incorporated into real life application and how useful it can be in so many ways. What else was fun is that I was able to use things that I have recently learned in full effect like using sqltext to find information in the correct way. 
+There were many fun things about this project. I was able to pull information from a database and allow a user to see that information using the command line. This was a very cool thing to be able to do within Java. This project really helped me see how Java can be fully incorporated into real life application and how useful it can be in so many ways. What else was fun is that I was able to use things that I have recently learned in full effect like using sqltext to find information in the correct way. This really felt like we are learning the 'meat and potatoes' of Java and gave a great insight into what we will be doing in the professional role as a software developer. 
