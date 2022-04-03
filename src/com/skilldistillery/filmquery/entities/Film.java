@@ -51,7 +51,7 @@ public class Film {
 		this.replacementCost = replacementCost;
 		this.rating = rating;
 		this.specialFeatures = specialFeatures;
-		
+
 	}
 
 	public Film(int id, String filmTitle, String description, int releaseYear, String languageId, int rentalDuration,

@@ -101,6 +101,7 @@ public class FilmQueryApp {
 
 	}
 
+}
 //	private void lookUpById(Scanner sc) {
 //		System.out.println("Enter ID for Film you would like to find");
 //		Film film = db.findFilmById(sc.nextInt());
@@ -133,4 +134,3 @@ public class FilmQueryApp {
 //		System.out.println(actors);
 //	}
 	// if logic for null - no object found from scanner input
-}

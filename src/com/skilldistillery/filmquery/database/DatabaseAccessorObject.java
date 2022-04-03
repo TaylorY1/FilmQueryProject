@@ -73,7 +73,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				film.setDescription(rs.getString("description"));
 				film.setReleaseYear(rs.getInt("release_year"));
 				film.setLanguageId(rs.getString("language_id"));
-			//	film.setLanguage(rs.getString(findLanguage("id")));
+				// film.setLanguage(rs.getString(findLanguage("id")));
 				// film.setRentalDuration(rs.getInt("rental_duration"));
 				// film.setRentalRate(rs.getDouble("rental_rate"));
 				// film.setFilmLength(rs.getInt("length"));
@@ -155,7 +155,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		try {
 
 			Connection conn = DriverManager.getConnection(url, user, pass);
-			sqltext = "SELECT l.name FROM language l JOIN film ON l.id = ?";
+			sqltext = "SELECT l.name FROM language l JOIN film f ON l.id = f.language_id WHERE f.id = ?";
 			PreparedStatement s = conn.prepareStatement(sqltext);
 			s.setInt(1, filmId);
 			ResultSet rs = s.executeQuery();
